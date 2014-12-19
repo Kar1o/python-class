@@ -11,15 +11,16 @@ while max_num is None:
 		print("type only positive integers")
 
 rand_num = random.randint(1, max_num)
-print(rand_num) 
+#print(rand_num) 
 count_num = 1
+tried_num = []
 find_num = input("guess the number ")
 while (int(find_num) != rand_num):
-	print(find_num)
+	tried_num.append(find_num)
 	count_num += 1
 	if int(find_num) > rand_num:
-		find_num = input("try a lower number")
+		find_num = input("try a lower number ")
 	else:
-		find_num = input("try a higher number")	
+		find_num = input("try a higher number ")	
 
-print("Congrats you found the random number with {} guesses".format(count_num))
+print("Congrats you found the random number with {} guesses and the wrong ones where {} ".format(count_num, tried_num))
